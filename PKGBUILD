@@ -110,8 +110,8 @@ conflicts=(
 )
 source=()
 sha256sums=()
-_lib_gles2="mupen64plus_next_gles2_libretro_android.so"
-_lib_gles3="mupen64plus_next_gles3_libretro_android.so"
+_lib_gles2="mupen64plus_next_gles2_libretro_android"
+_lib_gles3="mupen64plus_next_gles3_libretro_android"
 # This file has been published onto Ethereum Holesky testnet.
 # That network may disappear sooner or later, so you'll have to crowd-publish it
 # onto mainnets download after download on the mainnets when crowd-publishing
@@ -132,7 +132,7 @@ _lib_gles3_sig_sum="aa6c5dbdb0c1b6ee89903347f8c44a8cf87a64a522ed2c7bf5f901a17fe6
 _lib_gles2_sig_sum="e2a7588e296a6477e37e7e07b0641cb38301e400d028d661a31d265f5cc4040c"
 _http="https://github.com"
 _ns="6xrS42VaMBgMbWRPAiVP"
-_url="${_http}/${_ns}/${pkgname}"
+_url="${_http}/${_ns}/${pkgbase}"
 _commit="171f10df1c118cac425e136727c6464c1b20046f"
 _evmfs_lib_gles2_uri="evmfs://${_evmfs_network}/${_evmfs_address}/${_evmfs_ns}/${_lib_gles2_sum}"
 _evmfs_lib_gles2_sig_uri="evmfs://${_evmfs_sig_network}/${_evmfs_sig_address}/${_evmfs_sig_ns}/${_lib_gles2_sig_sum}"
@@ -141,10 +141,10 @@ _evmfs_lib_gles3_sig_uri="evmfs://${_evmfs_sig_network}/${_evmfs_sig_address}/${
 source=()
 sha256sums=()
 if [[ "${_evmfs}" == "true" ]]; then
-  _lib_gles2_src="${_lib_gles2}.tar.xz::${_evmfs_lib_gles2_uri}"
-  _lib_gles2_sig_src="${_lib_gles2}.tar.xz.sig::${_evmfs_lib_gles2_sig_uri}"
-  _lib_gles3_src="${_lib_gles3}.tar.xz::${_evmfs_lib_gles3_uri}"
-  _lib_gles3_sig_src="${_lib_gles3}.tar.xz.sig::${_evmfs_lib_gles3_sig_uri}"
+  _lib_gles2_src="${_lib_gles2}.arm.so.tar.xz::${_evmfs_lib_gles2_uri}"
+  _lib_gles2_sig_src="${_lib_gles2}.arm.so.tar.xz.sig::${_evmfs_lib_gles2_sig_uri}"
+  _lib_gles3_src="${_lib_gles3}.arm.so.tar.xz::${_evmfs_lib_gles3_uri}"
+  _lib_gles3_sig_src="${_lib_gles3}.arm.so.tar.xz.sig::${_evmfs_lib_gles3_sig_uri}"
   if [[ "${_gles3}" == "true" ]]; then
     source+=(
       "${_lib_gles3_src}"
@@ -156,10 +156,10 @@ if [[ "${_evmfs}" == "true" ]]; then
     )
   fi
 elif [[ "${_evmfs}" == "false" ]]; then
-  _lib_gles2_src="${_lib_gles2}.tar.xz::${_url}/raw/${_commit}/${_lib_gles2}.arm.tar.xz"
-  _lib_gles2_sig_src="${_lib_gles2}.tar.xz.sig::${_url}/raw/${_commit}/${_lib_gles2}.arm.tar.xz.sig"
-  _lib_gles3_src="${_lib_gles3}.tar.xz::${_url}/raw/${_commit}/${_lib_gles3}.arm.tar.xz"
-  _lib_gles3_sig_src="${_lib_gles3}.tar.xz.sig::${_url}/raw/${_commit}/${_lib_gles3}.arm.tar.xz.sig"
+  _lib_gles2_src="${_lib_gles2}.arm.so.tar.xz::${_url}/raw/${_commit}/${_lib_gles2}.arm.so.tar.xz"
+  _lib_gles2_sig_src="${_lib_gles2}.arm.so.tar.xz.sig::${_url}/raw/${_commit}/${_lib_gles2}.arm.so.tar.xz.sig"
+  _lib_gles3_src="${_lib_gles3}.arm.so.tar.xz::${_url}/raw/${_commit}/${_lib_gles3}.arm.so.tar.xz"
+  _lib_gles3_sig_src="${_lib_gles3}.arm.so.tar.xz.sig::${_url}/raw/${_commit}/${_lib_gles3}.arm.so.tar.xz.sig"
 fi
 if [[ "${_gles3}" == "true" ]]; then
   source+=(
