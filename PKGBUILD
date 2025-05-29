@@ -191,7 +191,7 @@ validgpgkeys=(
   '12D8E3D7888F741E89F86EE0FEC8567A644F1D16'
 )
 
-package_libretro-mupen64plus-next-sles2-bin() {
+package_libretro-mupen64plus-next-gles2-bin() {
   local \
     _dest_dir
   provides+=(
@@ -210,7 +210,7 @@ package_libretro-mupen64plus-next-sles2-bin() {
     "${pkgdir}/${_dest_dir}/${_lib_gles2}"
 }
 
-package_libretro-mupen64plus-next-sles3-bin() {
+package_libretro-mupen64plus-next-gles3-bin() {
   local \
     _dest_dir
   provides+=(
